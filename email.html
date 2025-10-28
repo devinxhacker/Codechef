@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Introductory & Guidance Session: Smart India Hackathon</title>
+  <style>
+    body {
+      /* Dark, tech-themed gradient background */
+      background: linear-gradient(135deg, #0a192f 0%, #000000 100%);
+      font-family: 'Segoe UI', Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      color: #e0e0e0; /* Light text for dark background */
+    }
+    .email-container {
+      max-width: 600px;
+      margin: 40px auto;
+      background: #000000; 
+      border-radius: 16px;
+      /* A subtle glow effect using the SIH orange */
+      box-shadow: 0 8px 40px rgba(245, 158, 66, .15);
+      overflow: hidden;
+      border: 2px solid #374151; /* Muted border */
+    }
+    .header {
+      /* Vibrant SIH color gradient */
+      background: linear-gradient(-45deg, #1998d4 0%, #19ae6a 10%, #f59e42 100%);
+      color: #fff;
+      padding: 32px 24px 24px 24px;
+      position: relative;
+      text-align: center;
+      border-bottom: none; /* Gradient provides better visual separation */
+    }
+    .logo {
+      width: 160px;
+      height: 160px;
+      display: block;
+      margin: 0 auto;
+      margin-bottom: 12px;
+      border-radius: 10%;
+      position: relative;
+      overflow: hidden;
+    }
+    .title {
+      font-size: 1.9em;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+    .subtitle {
+      font-size: 1.1em;
+      margin-top: 10px;
+      font-weight: 500;
+      color: #fff; /* White text for contrast on gradient */
+      text-shadow: 0 1px 2px rgba(0,0,0,0.4);
+    }
+    .presenter {
+      font-size: 0.9em;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: #fff;
+      background: rgba(0, 0, 0, 0.25);
+      display: inline-block;
+      padding: 6px 14px;
+      border-radius: 16px;
+      margin-bottom: 16px;
+    }
+    .session-details {
+      background: #111827; /* Even darker for contrast */
+      padding: 22px 24px 12px 24px;
+      font-size: 1.05em;
+      border-left: 6px solid #f59e42;
+      margin: 24px; /* Add margin to separate from other elements */
+      border-radius: 8px;
+    }
+    .session-details strong {
+      color: #60a5fa; /* Brighter blue for readability */
+    }
+    .description {
+      padding: 0 26px 20px 26px;
+      font-size: 1em;
+      line-height: 1.6;
+      color: #d1d5db; /* Light gray for body text */
+    }
+    .themes {
+      margin: 12px 26px 26px 26px;
+      padding: 18px;
+      background: #374151; /* Medium-dark gray */
+      border-radius: 8px;
+      border: 1px solid #4b5563;
+    }
+    .themes-title {
+      font-weight: 600;
+      color: #f59e42; /* SIH Orange */
+      margin-bottom: 12px;
+      font-size: 1.1em;
+    }
+    .themes-list {
+      margin: 0;
+      padding-left: 18px;
+      color: #d1d5db;
+    }
+    .venue {
+      background: #111827;
+      color: #f59e42; /* Orange text on dark background */
+      padding: 18px 26px;
+      text-align: center;
+      font-size: 1.06em;
+      border-top: 2px dashed #f59e42;
+    }
+    .motivator {
+      text-align: center;
+      font-size: 1.1em;
+      font-weight: 600;
+      color: #60a5fa; /* Bright blue for emphasis */
+      margin: 0 26px 26px 26px; /* Increased bottom margin */
+    }
+    .whatsapp-group {
+      text-align: center;
+      margin: 20px auto 40px; /* Centered with bottom margin for spacing */
+      font-size: 1em;
+      font-weight: 600;
+      border: 2px dashed #25D366;
+      padding: 8px 10px;
+      border-radius: 50px;
+      max-width: 280px; /* Ensure it's responsive */
+    }
+    .whatsapp-link {
+      color: #25D366; /* WhatsApp green */
+      text-decoration: none;
+      font-weight: 700;
+    }
+    .cta {
+      display: block;
+      width: 220px; /* Wider button */
+      margin: 28px auto; /* More vertical space */
+      background: #f59e42; /* SIH Orange for primary action */
+      color: #111827; /* Dark text for contrast */
+      text-align: center;
+      font-weight: 700; /* Bolder */
+      border-radius: 8px;
+      padding: 16px 0;
+      text-decoration: none;
+      font-size: 1.15em;
+      box-shadow: 0 4px 15px rgba(245, 158, 66, .25);
+      transition: all 0.3s ease;
+    }
+    .cta:hover {
+      background: #fbbf24; /* Lighter orange on hover */
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(251, 191, 36, .3);
+    }
+    .footer {
+      text-align: center;
+      padding: 24px;
+      background: #111827; /* Darkest background */
+      font-size: 0.9em;
+      color: #9ca3af; /* Muted gray for less important info */
+      border-top: 1.5px solid #374151;
+      line-height: 1.6;
+    }
+    .footer-organizer strong {
+      color: #e0e0e0;
+      font-weight: 600;
+    }
+    .footer-logo {
+      width: 100px;
+      height: auto;
+      display: block;
+      margin: 0 auto 16px;
+      border-radius: 8px;
+    }
+    .footer-contact {
+      margin: 12px 0;
+    }
+    .footer-contact a {
+      color: #60a5fa;
+      text-decoration: none;
+    }
+    .footer-contact a:hover {
+      text-decoration: underline;
+    }
+    .footer-social {
+      margin: 16px 0 16px 0;
+      padding-bottom: 16px;
+      border-bottom: 1px solid #374151;
+    }
+    .social-link {
+      display: inline-block;
+      color: #9ca3af;
+      text-decoration: none;
+      margin: 0 10px;
+      transition: color 0.3s ease;
+    }
+    .social-link:hover {
+      color: #f59e42;
+    }
+    .footer-hashtags {
+      font-weight: 600;
+      color: #1998d4;
+      letter-spacing: 0.5px;
+    }
+    @media (max-width: 600px) {
+      .email-container { border-radius: 0; box-shadow: none; margin: 0 auto; }
+      .header, .description, .themes, .venue { padding: 20px 15px; }
+      .session-details { padding: 16px 15px 12px 15px; margin: 15px; }
+    }
+  </style>
+</head>
+/hebkfnkd
+<body>
+  <div class="email-container">
+    <div class="header">
+      <!-- SIH Lightbulb Logo (SVG inline, based on SIH logo description) -->
+      <!-- <img src="https://i.postimg.cc/nLF4nvcZ/image-removebg-preview.png" alt="SIH Logo" class="logo"> -->
+       <img src="https://i0.wp.com/opportunitycell.com/wp-content/uploads/2022/03/SIH2.png?fit=327%2C345&ssl=1" alt="SIH Logo" class="logo">
+      <div class="presenter">CODECHEF MITAOE PRESENTS</div>
+      <div class="title">Smart India Hackathon 2025</div>
+      <div class="subtitle">Introductory & Guidance Session</div>
+    </div>
+    <div class="session-details">
+      <strong>Date:</strong> Thursday, 4th September 2025 <font color="red">(TODAY!!!)</font><br>
+      <strong>Time:</strong> 3:00 pm onwards<br>
+      <strong>Venue:</strong> <span style="color:#f59e42;">D109</span>
+    </div>
+    <div class="description">
+      Join us for a comprehensive introduction and guidance session on the <strong>Smart India Hackathon (SIH) 2025</strong>.
+      <br><br>
+      Discover India's largest open innovation platform as we walk through the SIH themes, registration process, and team formation. This session is your chance to connect with mentors, network with peers, and ignite your passion for solving real-world problems.
+
+      <h3 style="color: #f59e42; margin-top: 24px; margin-bottom: 16px;">Hear from SIH Achievers</h3>
+      <p style="margin-left: 16px; margin-bottom: 16px;"><strong>Viraj Goudar</strong><br>
+      <span style="font-size: 0.9em; color: #d1d5db;">SIH Finalist 2022 | Product Developer @ BMC</span></p>
+      <p style="margin-left: 16px;"><strong>Viraj Mandlik</strong><br>
+      <span style="font-size: 0.9em; color: #d1d5db;">SIH Finalist 2024 | Software Developer @ Cisco</span></p>
+
+      <h3 style="color: #f59e42; margin-top: 24px; margin-bottom: 16px;">Unlock Winning Secrets</h3>
+      <p>With insights from <strong>4 winning teams</strong> and <strong>2 finalist teams</strong> from SIH 2024, you will learn:</p>
+      <ul>
+        <li>Proven strategies and smart tips to get ahead.</li>
+        <li>Secrets to making your idea and prototype stand out.</li>
+        <li>Presentation hacks to impress the judges.</li>
+        <li>Crucial Do’s & Don’ts from real SIH experiences.</li>
+      </ul>
+    </div>
+
+    <div class="motivator">
+      <strong>"Innovate, Collaborate, and Transform India with Your Ideas!"</strong>
+    </div>
+    <div class="themes">
+      <div class="themes-title">SIH 2025 Themes:</div>
+      <ul class="themes-list">
+        <li>Smart Automation</li>
+        <li>Fitness & Sports</li>
+        <li>Heritage & Culture</li>
+        <li>MedTech / BioTech / HealthTech</li>
+        <li>Agriculture, FoodTech & Rural Development</li>
+        <li>Smart Vehicles</li>
+        <li>Transportation & Logistics</li>
+        <li>Robotics and Drones</li>
+        <li>Clean & Green Technology</li>
+        <li>Tourism</li>
+        <li>Renewable / Sustainable Energy</li>
+      </ul>
+    </div>
+    <!-- <div class="venue">
+      <b>Venue details will be announced soon. Stay tuned!</b>
+    </div> -->
+    <a href="https://forms.gle/oE31yBtWrwjjMeHt8" class="cta">Register Your Seat<br>Now!</a>
+    <!-- whatsapp group -->
+    <div class="whatsapp-group">
+      <a href="https://chat.whatsapp.com/HhK3aYkuC7NL8vxqdmAgLM?mode=ems_copy_c" class="whatsapp-link">Join our WhatsApp Group</a>
+    </div>
+    <div class="footer">
+      <div class="footer-organizer">
+        Organized by <strong>CodeChef &lt;MITAOE&gt;</strong>
+        <br><br/>
+        <img src="https://mitaoe.ac.in/assets/images/club/MITAoE-Chefs.jpg" alt="CodeChef MITAOE Chapter Logo" class="footer-logo" >
+      </div>
+      <div class="footer-contact">
+        For queries, contact: <a href="mailto:nphajare@mitaoe.ac.in" target="_blank">SIH Coordinator: Prof. Neha Hajare</a> <br/>
+        <a href="tel:9960694705" target="_blank">Phone: +91 99606 94705</a>
+        <br/>
+        <!-- Student Coordinators: <a href="mailto:202301040146@mitaoe.ac.in" target="_blank">Om Panchal</a>, <a href="mailto:202301040001@mitaoe.ac.in" target="_blank">Kiran Nandi</a> -->
+      </div>
+      <div class="footer-social">
+        <a href="https://www.instagram.com/codechef_mitaoe/" target="_blank" class="social-link">Instagram</a> &bull;
+        <a href="https://www.linkedin.com/company/codechef-mitaoe-chapter" target="_blank" class="social-link">LinkedIn</a> &bull;
+        <a href="https://mitaoe.ac.in/club-codechef-campus-chapter.php" target="_blank" class="social-link">About Us</a>
+      </div>
+      <div class="footer-hashtags">#SIH2025 &nbsp; #SmartIndiaHackathon</div>
+    </div>
+  </div>
+</body>
+</html>

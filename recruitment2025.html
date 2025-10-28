@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CodeChef MITAOE Recruitment 2024-25</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: #ffffff;
+            padding: 20px;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 700px;
+            margin: 0 auto;
+            background: linear-gradient(135deg, #0f1419 0%, #1a1f2e 100%);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+        }
+
+        .header {
+            background: linear-gradient(135deg, #5b4a8d 0%, #8b5a8d 100%);
+            padding: 40px 30px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            animation: pulse 3s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 0.5; }
+            50% { transform: scale(1.1); opacity: 0.8; }
+        }
+
+        .logo {
+            font-size: 42px;
+            font-weight: bold;
+            color: #fff;
+            text-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+            position: relative;
+            z-index: 1;
+            letter-spacing: 2px;
+        }
+
+        .logo span {
+            color: #ffd700;
+        }
+
+        .subtitle {
+            font-size: 18px;
+            margin-top: 10px;
+            color: #e0e0e0;
+            position: relative;
+            z-index: 1;
+            font-weight: 300;
+        }
+
+        .banner {
+            background: linear-gradient(90deg, #ff6b6b 0%, #ffd93d 50%, #6bcf7f 100%);
+            padding: 25px;
+            text-align: center;
+            font-size: 28px;
+            font-weight: bold;
+            color: #000;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            box-shadow: inset 0 -3px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .content {
+            padding: 40px 30px;
+        }
+
+        .welcome-text {
+            text-align: center;
+            font-size: 24px;
+            margin-bottom: 25px;
+            color: #ffd700;
+            font-weight: bold;
+            text-shadow: 0 2px 5px rgba(255, 215, 0, 0.3);
+        }
+
+        .intro-text {
+            text-align: center;
+            font-size: 17px;
+            margin-bottom: 35px;
+            color: #d0d0d0;
+            line-height: 1.8;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin: 35px 0;
+            flex-wrap: wrap;
+        }
+
+        .cta-button {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #fff;
+            padding: 15px 35px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+            display: inline-block;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.6);
+        }
+
+        .section-title {
+            font-size: 26px;
+            margin: 40px 0 25px;
+            color: #ffd700;
+            text-align: center;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, #ffd700, transparent);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin: 30px 0;
+        }
+
+        .feature-card {
+            background: linear-gradient(135deg, #2d3748 0%, #1a202c 100%);
+            padding: 30px;
+            border-radius: 15px;
+            border: 2px solid #4a5568;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, transparent 100%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            border-color: #667eea;
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+        }
+
+        .feature-card:hover::before {
+            opacity: 1;
+        }
+
+        .feature-icon {
+            font-size: 36px;
+            margin-bottom: 15px;
+        }
+
+        .feature-title {
+            font-size: 20px;
+            margin-bottom: 12px;
+            color: #ffd700;
+            font-weight: bold;
+        }
+
+        .feature-description {
+            color: #c0c0c0;
+            font-size: 15px;
+            line-height: 1.6;
+        }
+
+        .process-section {
+            background: linear-gradient(135deg, #1e2633 0%, #0f1419 100%);
+            padding: 35px;
+            border-radius: 15px;
+            margin: 30px 0;
+            border: 2px solid #667eea;
+        }
+
+        .process-step {
+            display: flex;
+            align-items: start;
+            margin: 25px 0;
+            position: relative;
+            padding-left: 60px;
+        }
+
+        .step-number {
+            position: absolute;
+            left: 0;
+            width: 45px;
+            height: 45px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 20px;
+            color: #fff;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.5);
+        }
+
+        .step-content {
+            flex: 1;
+        }
+
+        .step-title {
+            font-weight: bold;
+            color: #ffd700;
+            margin-bottom: 8px;
+            font-size: 17px;
+        }
+
+        .step-description {
+            color: #d0d0d0;
+            font-size: 15px;
+            line-height: 1.7;
+        }
+
+        .important-dates {
+            background: linear-gradient(135deg, #ff6b6b 0%, #ee5a6f 100%);
+            padding: 25px;
+            border-radius: 15px;
+            margin: 30px 0;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(255, 107, 107, 0.4);
+        }
+
+        .important-dates h3 {
+            font-size: 22px;
+            margin-bottom: 15px;
+            color: #fff;
+        }
+
+        .date-item {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 15px;
+            margin: 12px 0;
+            border-radius: 10px;
+            font-size: 16px;
+            font-weight: bold;
+            backdrop-filter: blur(10px);
+        }
+
+        .contact-section {
+            background: linear-gradient(135deg, #2d3748 0%, #1a202c 100%);
+            padding: 30px;
+            border-radius: 15px;
+            margin: 30px 0;
+            border: 2px solid #4a5568;
+        }
+
+        .contact-title {
+            font-size: 20px;
+            color: #ffd700;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        .contact-info {
+            margin: 10px 0;
+            color: #d0d0d0;
+            font-size: 15px;
+        }
+
+        .contact-info strong {
+            color: #fff;
+        }
+
+        .social-links {
+            text-align: center;
+            margin: 35px 0;
+            padding: 25px;
+        }
+
+        .social-links a {
+            display: inline-block;
+            margin: 0 15px;
+            color: #667eea;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            padding: 10px 25px;
+            border: 2px solid #667eea;
+            border-radius: 25px;
+        }
+
+        .social-links a:hover {
+            background: #667eea;
+            color: #fff;
+            transform: scale(1.05);
+        }
+
+        .footer {
+            background: linear-gradient(135deg, #5b4a8d 0%, #8b5a8d 100%);
+            padding: 25px;
+            text-align: center;
+            color: #e0e0e0;
+            font-size: 14px;
+        }
+
+        .footer strong {
+            color: #ffd700;
+        }
+
+        @media (max-width: 600px) {
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+            }
+            
+            .logo {
+                font-size: 32px;
+            }
+            
+            .banner {
+                font-size: 20px;
+                letter-spacing: 1px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <div class="logo">
+                <span>&lt;</span>Code<span>Chef</span><span>/&gt;</span>
+            </div>
+            <div class="subtitle">MITAOE Chapter 2025-26</div>
+        </div>
+
+        <!-- Banner -->
+        <div class="banner">
+            🎉 We Are Back! 🎉
+        </div>
+
+        <!-- Main Content -->
+        <div class="content">
+            <div class="welcome-text">
+                Join the Elite Coding Community!
+            </div>
+
+            <div class="intro-text">
+                We are thrilled to announce that <strong>CodeChef Club MITAOE</strong> is now recruiting for the 2025-26 academic year! 
+                If you're passionate about <strong>competitive coding</strong>, <strong>problem-solving</strong>, and being part of a vibrant 
+                community that pushes boundaries, this is your golden opportunity to join our dynamic team of innovators and achievers.
+            </div>
+
+            <!-- CTA Buttons -->
+            <div class="cta-buttons">
+                <a href="#" class="cta-button">📝 First Year Registration →</a>
+                <a href="#" class="cta-button">📝 Second Year Registration →</a>
+                <a href="#" class="cta-button">📝 Third Year Registration →</a>
+            </div>
+
+            <!-- About Section -->
+            <div class="section-title">Why Join CodeChef MITAOE?</div>
+
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">💻</div>
+                    <div class="feature-title">Competitive Coding Environment</div>
+                    <div class="feature-description">
+                        Immerse yourself in a thriving competitive atmosphere where peers challenge each other daily. 
+                        Sharpen your skills through regular contests, discussions, and collaborative problem-solving sessions.
+                    </div>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">🌱</div>
+                    <div class="feature-title">Personal Growth & Development</div>
+                    <div class="feature-description">
+                        Beyond competitions, we focus on holistic development. Attend workshops, technical talks, and 
+                        mentorship sessions that transform you into a well-rounded software engineer ready for industry challenges.
+                    </div>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">🎓</div>
+                    <div class="feature-title">Unmatched Placement Record</div>
+                    <div class="feature-description">
+                        Our track record speaks for itself - <strong>100% placement rate</strong> among top-tier companies! 
+                        Club members consistently secure positions at leading tech giants with impressive packages.
+                    </div>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">🤝</div>
+                    <div class="feature-title">Powerful Network & Connections</div>
+                    <div class="feature-description">
+                        Connect with exceptional senior coders who are now working at top companies. Gain access to 
+                        valuable referrals, industry insights, and build a strong professional network that lasts a lifetime.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recruitment Process -->
+            <div class="section-title">Recruitment Process</div>
+
+            <div class="process-section">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <div class="step-title">Online Coding Contest</div>
+                        <div class="step-description">
+                            Registered students will receive a contest link featuring challenging DSA (Data Structures and Algorithms) 
+                            problems. This is your chance to showcase your problem-solving prowess and coding skills!
+                        </div>
+                    </div>
+                </div>
+
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <div class="step-title">Personal Interview</div>
+                        <div class="step-description">
+                            Shortlisted candidates will be invited for an offline personal interview on campus. 
+                            This is an opportunity to demonstrate your passion, technical knowledge, and fit within our community.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <div class="step-title">Official Induction</div>
+                        <div class="step-description">
+                            Successful candidates will be officially inducted as CodeChef Club members and embark on an 
+                            incredible journey of growth, learning, and achievement! 🎉
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Important Dates -->
+            <div class="important-dates">
+                <h3>⏰ Mark Your Calendars!</h3>
+                <div class="date-item">
+                    📅 Registration Deadline: <strong>October 19, 2025 (Sunday) - 11:59 PM</strong>
+                </div>
+                <div class="date-item">
+                    🏆 Contest Date: <strong>October 22, 2025 (Wednesday) - 6:00 PM to 8:00 PM</strong>
+                </div>
+            </div>
+
+            <!-- Contact Information -->
+            <div class="contact-section">
+                <div class="contact-title">📞 Contact Information</div>
+                
+                <div class="contact-info">
+                    <strong>Faculty Coordinator:</strong><br>
+                    Prof. Neha Hajare - 9960694705
+                </div>
+
+                <div class="contact-info" style="margin-top: 20px;">
+                    <strong>Student Coordinators:</strong><br>
+                    <!-- • Om Panchal - 9146219903<br>
+                    • Anushka Jadhav - 7972860399<br>
+                    • Shubham Pawde - 8766014695 -->
+                </div>
+
+                <div class="contact-info" style="margin-top: 20px;">
+                    <strong>Email:</strong> mitaoe_chefs@mitaoe.ac.in
+                </div>
+            </div>
+
+            <!-- Social Links -->
+            <div class="social-links">
+                <a href="#">🔗 LinkedIn</a>
+                <a href="#">📸 Instagram</a>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <p><strong>Don't miss this opportunity to be part of something extraordinary!</strong></p>
+            <p style="margin-top: 10px;">Your journey to becoming an exceptional coder starts here. See you at CodeChef! 🚀</p>
+            <p style="margin-top: 15px; font-size: 12px; opacity: 0.8;">
+                © 2025 CodeChef Club MITAOE. All rights reserved.
+            </p>
+        </div>
+    </div>
+</body>
+</html>
